@@ -4,6 +4,7 @@
 **/.classpath
 **/.project
 **/.settings/
+**/.DS_Store
 **/.vscode
 **/pom.xml.tag
 **/pom.xml.releaseBackup
