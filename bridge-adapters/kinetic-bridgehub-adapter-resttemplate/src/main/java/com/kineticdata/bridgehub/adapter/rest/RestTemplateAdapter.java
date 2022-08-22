@@ -3,7 +3,6 @@ package com.kineticdata.bridgehub.adapter.rest;
 import com.kineticdata.bridgehub.adapter.BridgeAdapter;
 import com.kineticdata.bridgehub.adapter.BridgeError;
 import com.kineticdata.bridgehub.adapter.BridgeRequest;
-import com.kineticdata.bridgehub.adapter.BridgeUtils;
 import com.kineticdata.bridgehub.adapter.Count;
 import com.kineticdata.bridgehub.adapter.Record;
 import com.kineticdata.bridgehub.adapter.RecordList;
@@ -12,10 +11,12 @@ import com.kineticdata.commons.v1.config.ConfigurablePropertyMap;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -111,7 +112,7 @@ public class RestTemplateAdapter implements BridgeAdapter {
         // Parse the query and exchange out any parameters with their parameter values.
         // ie. change the query username=<%=parameter["Username"]%> to username=test.user
         // where parameter["Username"]=test.user
-        RestTemplateQualificationParser parser = new RestTrainingQualificationParser();
+        RestTemplateQualificationParser parser = new RestTemplateQualificationParser();
         String query = parser.parse(request.getQuery(),request.getParameters());
 
         // Build up the url that you will use to retrieve the source data. Use the query variable
@@ -162,7 +163,7 @@ public class RestTemplateAdapter implements BridgeAdapter {
         // Parse the query and exchange out any parameters with their parameter values.
         // ie. change the query username=<%=parameter["Username"]%> to username=test.user
         // where parameter["Username"]=test.user
-        RestTemplateQualificationParser parser = new RestTrainingQualificationParser();
+        RestTemplateQualificationParser parser = new RestTemplateQualificationParser();
         String query = parser.parse(request.getQuery(),request.getParameters());
 
         // Build up the url that you will use to retrieve the source data. Use the query variable
@@ -220,7 +221,7 @@ public class RestTemplateAdapter implements BridgeAdapter {
         // Parse the query and exchange out any parameters with their parameter values.
         // ie. change the query username=<%=parameter["Username"]%> to username=test.user
         // where parameter["Username"]=test.user
-        RestTemplateQualificationParser parser = new RestTrainingQualificationParser();
+        RestTemplateQualificationParser parser = new RestTemplateQualificationParser();
         String query = parser.parse(request.getQuery(),request.getParameters());
 
         // Build up the url that you will use to retrieve the source data. Use the query variable

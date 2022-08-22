@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taskInfo version="1.0">
+    <info name="greeting" description="A greeting to prepend to the message"></info>
+</taskInfo>

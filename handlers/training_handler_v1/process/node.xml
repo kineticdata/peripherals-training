@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="training_handler" name="Training Handler" schema_version="1.0" version="1">
+    <author></author>
+    <description></description>
+    <helpurl></helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="first_name" label="First Naem" required="true" tooltip="Enter a first name" />
+        <parameter id="middle_initial" label="Middle Initial" required="false" tooltip="Enter a middle initial" />
+        <parameter id="last_name" label="Last Name" required="true" tooltip="Enter a last name" />
+    </parameters>
+    <handler name="training_handler" version="1">
+        <infos>
+            <info name="greeting">&lt;%= @info['greeting'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name="first_name">&lt;%= @parameters['first_name'] %&gt;</parameter>
+            <parameter name="middle_initial">&lt;%= @parameters['middle_initial'] %&gt;</parameter>
+            <parameter name="last_name">&lt;%= @parameters['last_name'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results></results>
+</taskDefinition>
